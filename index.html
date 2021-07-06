@@ -1,128 +1,32 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usuários</title>
-    <script type='text/javascript' src="main.js"></script>
-
-    <style>
-        #listaRegistros{ display: none; }
-        #cadastroRegistro{
-            display: none;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        body[page=lista] #listaRegistros{ display: block; }
-        body[page=cadastro] #cadastroRegistro{ display: flex; }
-
-        body{
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 14px;
-        }
-
-        table{
-            width: 100%;
-            border-collapse: collapse;
-        }
-        table th,
-        table td{
-            font-size: 14px;
-            padding: 10px 15px;
-            border: solid 1px #ccc;
-        }
-
-        button{
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            background-color: #07a;
-            color: #fff;
-            margin: 3px;
-            padding: 10px 15px;
-        }
-        button.cinza{
-            background-color: #ccc;
-            color: #666;
-        }
-        button.vermelho{
-            background-color: #a00;
-        }
-        button:hover{
-            opacity: 0.8;
-        }
-
-        input{
-            border: solid 1px #ccc;
-            border-radius: 4px;
-            padding: 10px;
-        }
-
-        .label>div{
-            display: flex;
-        }
-        .label>div>input{
-            flex: 1;
-        }
-    </style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste Cadastro</title>
+ 
+  <link href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Roboto:wght@100&display=swap" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
+  <link href="app/assets/icons.css" rel="stylesheet">
+  <script src="app/assets/root/mask.min.js"></script>
+  <link href="app/assets/root/toastr.css" rel="stylesheet">
+  <script src="app/assets/root/toastr.js"></script>    
+  <link href="app/assets/root/slick.css" rel="stylesheet">
+  <script src="app/assets/root/slick.js"></script>
+  <link href="app/assets/app.css" rel="stylesheet">
+  <script src="app/controller/app.js"></script>
+  <link href="app/assets/index.css" rel="stylesheet">
+  <script src="app/controller/main.js"></script>
 </head>
-<body page='lista'>
-    
-    <div id='listaRegistros'>
 
-        <div style='display: flex;'>
-            <input style='flex:1' placeholder="PESQUISAR" autofocus id='inputPesquisa' />
-        </div>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Fone</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody id='listaRegistrosBody'></tbody>
-        </table>
-
-        <div>
-            <button onclick="vizualizar('cadastro', true)">Novo usuário</button>
-        </div>
-
-    </div>
-
-    <form id='cadastroRegistro'>
-
-        <div class='label'>
-            <div>ID</div>
-            <div>
-                <input type='number' readonly id='id' />
-            </div>
-        </div>
-
-        <div class='label'>
-            <div>Nome</div>
-            <div>
-                <input id='nome' />
-            </div>
-        </div>
-
-        <div class='label'>
-            <div>Fone</div>
-            <div>
-                <input type='tel' id='fone' />
-            </div>
-        </div>
-
-        <div>
-            <button>Salvar</button>
-            <button onclick="vizualizar('lista')" class="cinza" type='button'>Cancelar</button>
-        </div>
-
-    </form>
-
+<body>
+    <div id="root"></div>
 </body>
+
 </html>
